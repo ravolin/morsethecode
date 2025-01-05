@@ -3,535 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morse the Code - Learn Morse Code Easily</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* CSS styles */
-        :root {
-            --primary-color: #ff5722;
-            --secondary-color: #2196f3;
-            --background-color: #121212;
-            --text-color: #ffffff;
-            --card-background: #1e1e1e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: rgba(30, 30, 30, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #1a1a1a, #121212);
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #e64a19;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        .card {
-            background-color: var(--card-background);
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .morse-display {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            background-color: #2c2c2c;
-            color: var(--text-color);
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .quiz-option {
-            background-color: #2c2c2c;
-            border: none;
-            color: var(--text-color);
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .quiz-option:hover {
-            background-color: #3c3c3c;
-        }
-
-        .facts-list {
-            list-style-type: none;
-        }
-
-        .facts-list li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .facts-list li::before {
-            content: "•";
-            color: var(--primary-color);
-            font-size: 24px;
-            margin-right: 10px;
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .quiz-options {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .slide-up {
-            animation: slideUp 0.5s ease-out;
-        }
-    </style>
+    <title>Learn Morse Code in 7 Days</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Morse the Code</div>
-            <div class="nav-links">
-                <a href="#learn">Learn</a>
-                <a href="#practice">Practice</a>
-                <a href="#quiz">Quiz</a>
-                <a href="#facts">Facts</a>
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">MORSE</a>
+                <div class="nav-links">
+                    <a href="#lessons">Lessons</a>
+                    <a href="#practice">Practice</a>
+                    <a href="#challenges">Challenges</a>
+                    <a href="#progress">Progress</a>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <section class="hero">
-            <h1 class="fade-in">Learn Morse Code Easily</h1>
-            <p class="fade-in">A modern and fun way to master Morse code, from beginner to pro!</p>
-            <a href="#learn" class="btn slide-up">Get Started</a>
-        </section>
-
-        <section id="learn" class="container">
-            <div class="card">
-                <h2>Learn Morse Code</h2>
-                <p>Start with the basics and work your way up!</p>
-                <div class="morse-display" id="morseDisplay"></div>
-                <button class="btn" id="generateBtn">Generate Letter</button>
-                <button class="btn" id="playSound">Play Sound</button>
-                <div id="morseAlphabet"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="subtitle">01 — LEARN MORSE CODE</span>
+                        <h1>
+                            master<br>
+                            the art of<br>
+                            — signals
+                        </h1>
+                        <p>Learn Morse code in just 7 days with our structured daily lessons and interactive practice sessions.</p>
+                        <button class="cta-button" data-action="start-learning">Start Learning</button>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="morse-animation">
+                            <span class="dot">•</span>
+                            <span class="dash">—</span>
+                            <span class="dot">•</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="practice" class="container">
-            <div class="card">
-                <h2>Practice Morse Code</h2>
-                <p>Translate this Morse code:</p>
-                <div class="morse-display" id="practiceDisplay"></div>
-                <input type="text" id="practiceInput" placeholder="Type your answer here">
-                <button class="btn" id="checkAnswer">Check Answer</button>
-                <p id="feedback"></p>
-                <p id="score">Score: 0</p>
+        <section id="lessons" class="lessons">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">02 — DAILY LESSONS</span>
+                    <h2>Your Learning Path</h2>
+                </div>
+                <div class="lesson-grid">
+                    <!-- Lesson cards will be dynamically generated here -->
+                </div>
             </div>
         </section>
 
-        <section id="quiz" class="container">
-            <div class="card">
-                <h2>Morse Code Quiz</h2>
-                <p id="questionNumber"></p>
-                <p id="quizQuestion"></p>
-                <div class="quiz-options" id="quizOptions"></div>
-                <button class="btn" id="submitQuiz">Submit Answer</button>
-                <p id="quizFeedback"></p>
+        <section id="practice" class="practice">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">03 — PRACTICE MODE</span>
+                    <h2>Test Your Skills</h2>
+                </div>
+                <div class="practice-area">
+                    <div class="morse-display">
+                        <div class="current-letter"></div>
+                        <div class="morse-code"></div>
+                    </div>
+                    <div class="controls">
+                        <button class="play-sound">Play Sound</button>
+                        <input type="text" class="letter-input" maxlength="1" placeholder="Type the letter">
+                        <button class="check-answer">Check Answer</button>
+                    </div>
+                    <div class="feedback"></div>
+                    <div class="stats">
+                        <span class="score">Score: 0</span>
+                        <span class="streak">Streak: 0</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="facts" class="container">
-            <div class="card">
-                <h2>Interesting Facts</h2>
-                <ul class="facts-list" id="factsList"></ul>
+        <section id="challenges" class="challenges">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">04 — DAILY CHALLENGES</span>
+                    <h2>Push Your Limits</h2>
+                </div>
+                <div class="challenge-area">
+                    <div class="challenge-card">
+                        <div class="challenge-content">
+                            <h3>Today's Challenge</h3>
+                            <div class="challenge-task"></div>
+                            <div class="challenge-input">
+                                <input type="text" placeholder="Your answer">
+                                <button class="submit-challenge">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress" class="progress">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">05 — YOUR PROGRESS</span>
+                    <h2>Track Your Journey</h2>
+                </div>
+                <div class="progress-stats">
+                    <div class="stat-card">
+                        <h3>Completion</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Accuracy</h3>
+                        <div class="accuracy-display">0%</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Streak</h3>
+                        <div class="streak-display">0 days</div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 <a href="https://ravolin.com" target="_blank">Ravolin</a>. All rights reserved.</p>
-            <p><a href="https://github.com/ravolin/morsethecode" target="_blank">GitHub Repo</a> | <a href="https://instagram.com/ravolin.labs" target="_blank">Instagram</a></p>
+    <div class="modal" id="learningModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="lesson-content">
+                <h2 class="lesson-title"></h2>
+                <p class="lesson-description"></p>
+                <div class="lesson-letters"></div>
+                <div class="lesson-exercises">
+                    <div class="recognition-exercise">
+                        <h3>Recognition Exercise</h3>
+                        <div class="morse-code-display"></div>
+                        <input type="text" class="recognition-input" maxlength="1">
+                        <button class="submit-recognition">Submit</button>
+                    </div>
+                    <div class="writing-exercise">
+                        <h3>Writing Exercise</h3>
+                        <div class="letter-to-morse"></div>
+                        <input type="text" class="writing-input" placeholder="Type Morse code">
+                        <button class="submit-writing">Submit</button>
+                    </div>
+                    <div class="listening-exercise">
+                        <h3>Listening Exercise</h3>
+                        <button class="play-morse-sound">Play Sound</button>
+                        <input type="text" class="listening-input" maxlength="1">
+                        <button class="submit-listening">Submit</button>
+                    </div>
+                </div>
+                <div class="exercise-feedback"></div>
+            </div>
         </div>
-    </footer>
+    </div>
 
-    <script>
-        // JavaScript code
-        const morseCode = {
-            'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
-            'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
-            'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
-            'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-            'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---',
-            '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...',
-            '8': '---..', '9': '----.'
-        };
-
-        const facts = [
-            "Morse code can be transmitted using blinking lights.",
-            "It is still used in military and aviation industries.",
-            "Morse code was invented by Samuel Morse in the 1830s.",
-            "Skilled operators can send and receive Morse code at over 40 words per minute!",
-            "The most common Morse code message is 'SOS' which means 'Save Our Souls' or 'Save Our Ship'.",
-            "Morse code is not a language, but a coding system to transmit text information.",
-            "The longest Morse code dash is used for the letter 'O'.",
-            "The shortest Morse code signal is for the letter 'E', which is just a single dot.",
-            "Morse code can be sent by sound, light, or even touch.",
-            "The Japanese version of Morse code, called Wabun code, was developed in 1885."
-        ];
-
-        const quizQuestions = [
-            {
-                question: 'What does "..." represent in Morse code?',
-                options: ['S', 'O', 'E', 'T'],
-                correctAnswer: 'S'
-            },
-            {
-                question: 'Which letter is represented by "-.-" in Morse code?',
-                options: ['K', 'C', 'R', 'N'],
-                correctAnswer: 'K'
-            },
-            {
-                question: 'What is the Morse code for "SOS"?',
-                options: ['... --- ...', '... -- ...', '... .. ...', '... .. ..'],
-                correctAnswer: '... --- ...'
-            },
-            {
-                question: 'Which number is represented by "-----" in Morse code?',
-                options: ['1', '5', '0', '9'],
-                correctAnswer: '0'
-            },
-            {
-                question: 'What does ".-.-.-" represent in Morse code?',
-                options: ['Period (.)', 'Comma (,)', 'Question mark (?)', 'Exclamation mark (!)'],
-                correctAnswer: 'Period (.)'
-            }
-        ];
-
-        // Learn section
-        const morseDisplay = document.getElementById('morseDisplay');
-        const generateBtn = document.getElementById('generateBtn');
-        const playSound = document.getElementById('playSound');
-        const morseAlphabet = document.getElementById('morseAlphabet');
-
-        let currentLetter = '';
-
-        function generateRandomLetter() {
-            const letters = Object.keys(morseCode);
-            currentLetter = letters[Math.floor(Math.random() * letters.length)];
-            morseDisplay.textContent = `${currentLetter}: ${morseCode[currentLetter]}`;
-        }
-
-        generateBtn.addEventListener('click', generateRandomLetter);
-
-        playSound.addEventListener('click', () => {
-            const audio = new (window.AudioContext || window.webkitAudioContext)();
-            const dot = 60 / 100; // 100 WPM
-            const dash = dot * 3;
-            const pause = dot;
-
-            const oscillator = audio.createOscillator();
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(600, audio.currentTime);
-
-            const gainNode = audio.createGain();
-            gainNode.gain.setValueAtTime(0, audio.currentTime);
-
-            oscillator.connect(gainNode);
-            gainNode.connect(audio.destination);
-
-            oscillator.start();
-
-            let time = audio.currentTime;
-
-            for (const char of morseCode[currentLetter]) {
-                if (char === '.') {
-                    gainNode.gain.setValueAtTime(1, time);
-                    time += dot;
-                    gainNode.gain.setValueAtTime(0, time);
-                } else if (char === '-') {
-                    gainNode.gain.setValueAtTime(1, time);
-                    time += dash;
-                    gainNode.gain.setValueAtTime(0, time);
-                }
-                time += pause;
-            }
-
-            oscillator.stop(time);
-        });
-
-        Object.entries(morseCode).forEach(([letter, code]) => {
-            const div = document.createElement('div');
-            div.textContent = `${letter}: ${code}`;
-            morseAlphabet.appendChild(div);
-        });
-
-        // Practice section
-        const practiceDisplay = document.getElementById('practiceDisplay');
-        const practiceInput = document.getElementById('practiceInput');
-        const checkAnswer = document.getElementById('checkAnswer');
-        const feedback = document.getElementById('feedback');
-        const score = document.getElementById('score');
-
-        let currentMorse = '';
-        let practiceScore = 0;
-
-        function generateRandomMorse() {
-            const letters = Object.keys(morseCode);
-            const randomLetter = letters[Math.floor(Math.random() * letters.length)];
-            currentMorse = morseCode[randomLetter];
-            practiceDisplay.textContent = currentMorse;
-            practiceInput.value = '';
-            feedback.textContent = '';
-        }
-
-        generateRandomMorse();
-
-        checkAnswer.addEventListener('click', () => {
-            const userInput = practiceInput.value.toUpperCase();
-            const correctLetter = Object.keys(morseCode).find(key => morseCode[key] === currentMorse);
-            
-            if (userInput === correctLetter) {
-                feedback.textContent = 'Correct!';
-                practiceScore++;
-                score.textContent = `Score: ${practiceScore}`;
-                setTimeout(generateRandomMorse, 1500);
-            } else {
-                feedback.textContent = `Incorrect. The correct answer was ${correctLetter}`;
-            }
-        });
-
-        // Quiz section
-        const questionNumber = document.getElementById('questionNumber');
-        const quizQuestion = document.getElementById('quizQuestion');
-        const quizOptions = document.getElementById('quizOptions');
-        const submitQuiz = document.getElementById('submitQuiz');
-        const quizFeedback = document.getElementById('quizFeedback');
-
-        let currentQuestionIndex = 0;
-        let quizScore = 0;
-
-        function loadQuestion() {
-            const question = quizQuestions[currentQuestionIndex];
-            questionNumber.textContent = `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`;
-            quizQuestion.textContent = question.question;
-            quizOptions.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.classList.add('quiz-option');
-                button.textContent = option;
-                button.addEventListener('click', () => selectOption(index));
-                quizOptions.appendChild(button);
-            });
-
-            submitQuiz.disabled = true;
-            quizFeedback.textContent = '';
-        }
-
-        function selectOption(index) {
-            const options = quizOptions.children;
-            for (let i = 0; i < options.length; i++) {
-                options[i].classList.remove('selected');
-            }
-            options[index].classList.add('selected');
-            submitQuiz.disabled = false;
-        }
-
-        submitQuiz.addEventListener('click', () => {
-            const selectedOption = quizOptions.querySelector('.selected');
-            if (selectedOption) {
-                const userAnswer = selectedOption.textContent;
-                const correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
-                
-                if (userAnswer === correctAnswer) {
-                    quizScore++;
-                    quizFeedback.textContent = 'Correct!';
-                } else {
-                    quizFeedback.textContent = `Incorrect. The correct answer was ${correctAnswer}`;
-                }
-
-                currentQuestionIndex++;
-                if (currentQuestionIndex < quizQuestions.length) {
-                    setTimeout(loadQuestion, 1500);
-                } else {
-                    quizOptions.innerHTML = '';
-                    quizQuestion.textContent = `Quiz completed! Your score: ${quizScore} out of ${quizQuestions.length}`;
-                    submitQuiz.style.display = 'none';
-                }
-            }
-        });
-
-        loadQuestion();
-
-        // Facts section
-        const factsList = document.getElementById('factsList');
-
-        facts.forEach(fact => {
-            const li = document.createElement('li');
-            li.textContent = fact;
-            factsList.appendChild(li);
-        });
-
-        // Animations
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.card');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementBottom = element.getBoundingClientRect().bottom;
-                
-                if (elementTop < window.innerHeight && elementBottom > 0) {
-                    element.classList.add('fade-in');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check on page load
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
