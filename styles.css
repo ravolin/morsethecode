@@ -1,0 +1,540 @@
+:root {
+    --primary-color: #ff5722;
+    --secondary-color: #2196f3;
+    --background: #121212;
+    --surface: #1e1e1e;
+    --text: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --spacing: clamp(0.5rem, 2vw, 2rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.subtitle {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--background);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    background: #ff6b3d;
+}
+
+.hero-visual {
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--surface);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.morse-animation {
+    font-size: 5rem;
+    color: var(--primary-color);
+    display: flex;
+    gap: 1rem;
+}
+
+/* Lessons Section */
+.lessons {
+    padding: 6rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+}
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.lesson-card {
+    background: var(--surface);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.lesson-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.lesson-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.letters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.letters span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+/* Practice Section */
+.practice {
+    padding: 6rem 0;
+    background: var(--surface);
+}
+
+.practice-area {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.morse-display {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.letter-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.play-sound, .check-answer {
+    background: var(--primary-color);
+    color: var(--background);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-sound:hover, .check-answer:hover {
+    background: #ff6b3d;
+}
+
+.feedback {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+/* Challenges Section */
+.challenges {
+    padding: 6rem 0;
+}
+
+.challenge-card {
+    background: var(--surface);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.challenge-content h3 {
+    margin-bottom: 1rem;
+}
+
+.challenge-task {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.challenge-input {
+    display: flex;
+    gap: 1rem;
+}
+
+.challenge-input input {
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--text);
+}
+
+.submit-challenge {
+    background: var(--primary-color);
+    color: var(--background);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-challenge:hover {
+    background: #ff6b3d;
+}
+
+/* Progress Section */
+.progress {
+    padding: 6rem 0;
+    background: var(--surface);
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.accuracy-display, .streak-display {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1100;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.lesson-content {
+    margin-top: 2rem;
+}
+
+.lesson-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.lesson-description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.lesson-letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.lesson-letters span {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.lesson-exercises {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.recognition-exercise,
+.writing-exercise,
+.listening-exercise {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.exercise-feedback {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--text);
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--surface);
+        padding: 1rem;
+    }
+
+    .nav-links.active a {
+        padding: 0.5rem 0;
+    }
+
+    .challenge-input {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+
