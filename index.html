@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn Morse code with a modern, interactive, and fun platform. Guaranteed to take you from beginner to pro!">
+  <title>Morse the Code - Learn Morse Code</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #121212);
+      color: #eaeaea;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .glass-container {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      max-width: 900px;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar a {
+      color: #eaeaea;
+      font-weight: 600;
+    }
+
+    .navbar a:hover {
+      color: #ffffff;
+    }
+
+    /* Buttons */
+    .btn-custom {
+      background-color: #ff5722;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #e64a19;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      background-color: #121212;
+      text-align: center;
+      color: #9e9e9e;
+    }
+
+    footer a {
+      color: #ff5722;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animated-header {
+      color: #ff5722;
+      font-size: 2.5rem;
+    }
+
+    /* Morse Code Examples */
+    .morse-example {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .glass-container {
+        margin: 10px;
+      }
+
+      .animated-header {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Morse the Code</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#learn">Learn</a></li>
+        <li class="nav-item"><a class="nav-link" href="#practice">Practice</a></li>
+        <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="#facts">Facts</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="glass-container text-center">
+  <h1 class="animated-header fade-in">Learn Morse Code Easily</h1>
+  <p class="fade-in">A modern and fun way to master Morse code, from beginner to pro!</p>
+  <a href="#learn" class="btn btn-custom fade-in">Get Started</a>
+</header>
+
+<section id="learn" class="glass-container">
+  <h2>Learn Morse Code</h2>
+  <p>Start with the basics and work your way up!</p>
+  <div class="morse-example">
+    <p><strong>SOS:</strong> ... --- ...</p>
+    <p><strong>HELLO:</strong> .... . .-.. .-.. ---</p>
+    <p><strong>WORLD:</strong> .-- --- .-. .-.. -..</p>
+  </div>
+</section>
+
+<section id="practice" class="glass-container">
+  <h2>Practice Morse Code</h2>
+  <p>Translate this Morse code:</p>
+  <p><code>-- --- .-. ... .</code></p>
+  <input type="text" class="form-control" placeholder="Type your answer here">
+  <button class="btn btn-custom mt-2">Check Answer</button>
+</section>
+
+<section id="quiz" class="glass-container">
+  <h2>Quiz</h2>
+  <p>Take a quiz to test your skills!</p>
+  <button class="btn btn-custom">Start Quiz</button>
+</section>
+
+<section id="facts" class="glass-container">
+  <h2>Interesting Facts</h2>
+  <p>Did you know?</p>
+  <ul>
+    <li>Morse code can be transmitted using blinking lights.</li>
+    <li>It is still used in military and aviation industries.</li>
+    <li>Morse code was invented by Samuel Morse in the 1830s.</li>
+    <li>Skilled operators can send and receive Morse code at over 40 words per minute!</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 <a href="https://ravolin.com" target="_blank">Ravolin</a>. All rights reserved.</p>
+  <p><a href="https://github.com/ravolin/morsethecode" target="_blank">GitHub Repo</a> | <a href="https://instagram.com/ravolin.labs" target="_blank">Instagram</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // GSAP Animations
+  gsap.from(".animated-header", { duration: 1.5, y: -50, opacity: 0 });
+  gsap.from(".glass-container", { duration: 1, scale: 0.9, opacity: 0, stagger: 0.2 });
+</script>
+</body>
+</html>
