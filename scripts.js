@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add animations to elements as they come into view
+    // animations to elements as they come into view
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => observer.observe(el));
 });
 
-    // Implement the lesson exercises functionality
+    //  the lesson exercises functionality
     function initializeLessonExercises() {
         const modal = document.getElementById('learningModal');
         
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize lesson exercises
     initializeLessonExercises();
 
-    // Implement progress tracking
+    //  progress tracking
     function updateProgress() {
         const progressPercentage = Math.round((currentLesson / 7) * 100);
         const progressFill = document.querySelector('.progress-fill');
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveProgress();
     }
 
-    // Implement daily challenge
+    // daily challenge
     function initializeDailyChallenge() {
         const challengeTask = document.querySelector('.challenge-task');
         const challengeInput = document.querySelector('.challenge-input input');
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize daily challenge
     initializeDailyChallenge();
 
-    // Implement smooth scrolling for all internal links
+    // smooth scrolling for all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Implement a timer for practice sessions
+    // a timer for practice sessions
     let practiceTimer;
     let practiceTime = 0;
 
@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.start-practice').addEventListener('click', startPracticeTimer);
     document.querySelector('.stop-practice').addEventListener('click', stopPracticeTimer);
 
-    // Implement confetti animation for completed lessons
+    //  confetti animation for completed lessons
     function showConfetti() {
         const confettiCount = 200;
         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show confetti when a lesson is completed
     document.addEventListener('lessonCompleted', showConfetti);
 
-    // Implement audio mute toggle
+    // audio mute toggle
     const muteButton = document.querySelector('.mute-audio');
     let isMuted = false;
 
